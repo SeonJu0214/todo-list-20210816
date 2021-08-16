@@ -5,20 +5,12 @@
         <b-col></b-col>
         <b-col cols="8">
           <b-card>
-            <h2 class="title">TODO LIST</h2>
-            <hr>
-            <b-nav tabs fill>
-              <b-nav-item>
-                +
-              </b-nav-item>
-              <b-nav-item>YEAR</b-nav-item>
-              <b-nav-item>MONTH</b-nav-item>
-              <b-nav-item>WEEK</b-nav-item>
-              <b-nav-item>TODAY</b-nav-item>
-            </b-nav>
-          <br>
-          <b-card>
-          </b-card>
+            <Header></Header>
+            <Menu></Menu>
+
+            <b-card>
+            
+            </b-card>
           </b-card>
         </b-col>
         <b-col></b-col>
@@ -28,23 +20,34 @@
 </template>
 
 <script>
-export default {
+  import Header from './components/Header.vue'
+  import Menu from './components/Menu.vue'
 
-}
+  export default {
+    components: {
+      'Header': Header,
+      'Menu': Menu
+    }
+  }
 </script>
 
 <style>
+  @font-face {
+    font-family: 'JSDongkang-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSDongkang-BoldA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   body {
     background-color: #F9F8ED;
   }
 
+  div, input {
+    font-family: 'JSDongkang-Bold';
+  }
+
   #index {
     margin-top: 10px;
-  }
-  
-  .title {
-    color: #7A6462;
-    font-weight: bold;
-    text-shadow: 0px 1px #ffffff, 3px 3px 0px #dad7d7;
   }
 </style>
