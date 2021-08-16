@@ -8,9 +8,7 @@
             <Header></Header>
             <Menu></Menu>
 
-            <b-card>
-            
-            </b-card>
+            <Input></Input>
           </b-card>
         </b-col>
         <b-col></b-col>
@@ -22,11 +20,13 @@
 <script>
   import Header from './components/Header.vue'
   import Menu from './components/Menu.vue'
+  import Input from './components/Input.vue'
 
   export default {
     components: {
       'Header': Header,
-      'Menu': Menu
+      'Menu': Menu,
+      'Input': Input
     }
   }
 </script>
@@ -49,5 +49,10 @@
 
   #index {
     margin-top: 10px;
+  }
+
+  /* 그림자 정의 */
+  .shadow {
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.3);
   }
 </style>
