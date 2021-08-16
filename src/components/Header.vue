@@ -25,6 +25,6 @@
   }
 
   hr {
-      border: 1px solid #7A6462;
+    border: 1px solid #7A6462;
   }
 </style>

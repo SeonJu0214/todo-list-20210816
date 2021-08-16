@@ -10,7 +10,6 @@
             <Input v-on:addTodo="addTodo"></Input>
             <br>
             <List v-bind:propsdata="todoItems" @removeTodo="removeTodo"></List>
-            <hr>
             <Footer v-on:removeAll="clearAll"></Footer>
           </b-card>
         </b-col>
@@ -110,9 +109,5 @@
 
   .card-main {
     border: 1px solid #7A6462;
-  }
-
-  hr {
-      border: 1px solid #7A6462;
   }
 </style>
