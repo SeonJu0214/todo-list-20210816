@@ -4,11 +4,23 @@
       <b-row class="text-center">
         <b-col></b-col>
         <b-col cols="8">
-          <b-card>
+          <b-card class="card-main">
             <Header></Header>
             <Menu></Menu>
 
             <Input></Input>
+            <br>
+            <ul class="list-group">
+              <li class="list-group-item">
+                청소하기
+              </li>
+              <li class="list-group-item">
+                청소하기
+              </li>
+              <li class="list-group-item">
+                청소하기
+              </li>
+            </ul>
           </b-card>
         </b-col>
         <b-col></b-col>
@@ -54,5 +66,9 @@
   /* 그림자 정의 */
   .shadow {
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-main {
+    border: 1px solid #7A6462;
   }
 </style>
