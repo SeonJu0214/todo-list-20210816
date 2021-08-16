@@ -8,7 +8,6 @@
             <Header></Header>
             <Menu></Menu>
             <Input v-on:addTodo="addTodo"></Input>
-            <br>
             <List v-bind:propsdata="todoItems" @removeTodo="removeTodo"></List>
             <Footer v-on:removeAll="clearAll"></Footer>
           </b-card>
@@ -54,9 +53,17 @@
            - todoItem : TodoInput 컴포넌트에서 올려 보낸 할 일 텍스트 값
            - 이 값을 로컬 스토리지에 저장하고, App 컴포넌트의 todoItems 데이터 속성에도 추가
            ( 뷰 데이터 )
+
+          [ Application → Local Storage → http://localhost:8080 ]
+           - Storage.setItem(key: string, value: string)
+           : 왼 쪽에 key, 오른쪽에 value 저장
+           localStorage.setItem(key, value);
         */
-        localStorage.setItem(todoItem, todoItem);
+        var length = this.todoItems.length;
+        localStorage.setItem(length, todoItem);
         this.todoItems.push(todoItem);
+        
+        console.log(localStorage.getItem(length));
       },
       clearAll() {
         localStorage.clear();
@@ -91,7 +98,7 @@
   }
 
   body {
-    background-color: #F9F8ED;
+    background-color: #E8DECC;
   }
 
   div, input {
@@ -108,6 +115,7 @@
   }
 
   .card-main {
-    border: 1px solid #7A6462;
+    border: 1px solid #6E5F54;
+    border-radius: 10px;
   }
 </style>

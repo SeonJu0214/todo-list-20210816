@@ -19,10 +19,10 @@
 
 <style scoped>
   .nav-top a {
-    color: #914E48;
+    color: #6E5F54;
   }
 
   #nav-today {
-    color: #EF6759;
+    color: #C9563A;
   }
 </style>

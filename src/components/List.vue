@@ -1,7 +1,7 @@
 <template>
   <section>
     <transition-group name="list" tag="ul">
-      <li v-for="(todoItem, index) in propsdata" :key="todoItem">
+      <li v-for="(todoItem, index) in propsdata" :key="index">
         <i class="checkBtn fas fa-check" aria-hidden="true"></i>
         {{ todoItem }}
         <span class="removeBtn" type="button" @click="removeTodo(todoItem, index)">
@@ -17,7 +17,7 @@
     props: ['propsdata'],
     methods: {
       removeTodo(todoItem, index) {
-      this.$emit('removeTodo', todoItem, index);
+        this.$emit('removeTodo', todoItem, index);
       }
     }
   }
@@ -50,17 +50,17 @@
     padding: 0 0.9rem;
     background: white;
     border-radius: 5px;
-    border: 1px solid #7A6462;
+    border: 1px solid #E8D2BA;
   }
 
   .checkBtn {
     line-height: 45px;
-    color: #62acde;
+    color: #6EA2C7;
     margin-right: 5px;
   }
 
   .removeBtn {
     margin-left: auto;
-    color: #EF6759;
+    color: #C9563A;
   }
 </style>

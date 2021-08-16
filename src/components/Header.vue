@@ -19,12 +19,12 @@
 
   .title {
     font-family: 'UhBeeSeulvely';
-    color: #7A6462;
+    color: #6E5F54;
     font-weight: bold;
-    text-shadow: 0px 1px #ffffff, 3px 3px 0px #dad7d7;
+    text-shadow: 0px 1px #ffffff, 3px 3px 0px #E8DECC;
   }
 
   hr {
-    border: 1px solid #7A6462;
+    border: 1px solid #6E5F54;
   }
 </style>
