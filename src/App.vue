@@ -6,23 +6,20 @@
         <b-col cols="8">
           <b-card>
             <h2 class="title">TODO LIST</h2>
-          <hr>
+            <hr>
             <b-nav tabs fill>
-              <b-nav-item active>
+              <b-nav-item>
                 +
               </b-nav-item>
-              
               <b-nav-item>YEAR</b-nav-item>
               <b-nav-item>MONTH</b-nav-item>
               <b-nav-item>WEEK</b-nav-item>
               <b-nav-item>TODAY</b-nav-item>
             </b-nav>
-
+          <br>
           <b-card>
-            
           </b-card>
           </b-card>
-            
         </b-col>
         <b-col></b-col>
       </b-row>
@@ -44,7 +41,7 @@ export default {
   #index {
     margin-top: 10px;
   }
-
+  
   .title {
     color: #7A6462;
     font-weight: bold;
