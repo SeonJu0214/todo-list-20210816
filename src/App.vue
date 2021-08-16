@@ -42,7 +42,7 @@
           */
           for (var i = 0; i < localStorage.length; i++) {
               // push() : 배열의 끝 요소에 배열 아이템을 하나씩 추가하는 자바스크립트 내장 API
-              this.todoItems.push(localStorage.key(i));
+              this.todoItems.push(localStorage.getItem(i));
           }
       }
     },
@@ -60,10 +60,9 @@
            localStorage.setItem(key, value);
         */
         var length = this.todoItems.length;
+
         localStorage.setItem(length, todoItem);
         this.todoItems.push(todoItem);
-        
-        console.log(localStorage.getItem(length));
       },
       clearAll() {
         localStorage.clear();
