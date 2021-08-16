@@ -23,4 +23,8 @@
     font-weight: bold;
     text-shadow: 0px 1px #ffffff, 3px 3px 0px #dad7d7;
   }
+
+  hr {
+      border: 1px solid #7A6462;
+  }
 </style>

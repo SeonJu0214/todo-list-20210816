@@ -7,20 +7,11 @@
           <b-card class="card-main">
             <Header></Header>
             <Menu></Menu>
-
-            <Input></Input>
+            <Input v-on:addTodo="addTodo"></Input>
             <br>
-            <ul class="list-group">
-              <li class="list-group-item">
-                청소하기
-              </li>
-              <li class="list-group-item">
-                청소하기
-              </li>
-              <li class="list-group-item">
-                청소하기
-              </li>
-            </ul>
+            <List v-bind:propsdata="todoItems" @removeTodo="removeTodo"></List>
+            <hr>
+            <Footer v-on:removeAll="clearAll"></Footer>
           </b-card>
         </b-col>
         <b-col></b-col>
@@ -33,12 +24,61 @@
   import Header from './components/Header.vue'
   import Menu from './components/Menu.vue'
   import Input from './components/Input.vue'
+  import List from './components/List.vue'
+  import Footer from './components/Footer.vue'
 
   export default {
+    props: ['propsdata'],
+    data() {
+      return {
+        // 데이터 속성 todoItems 선언
+        todoItems: []
+      }
+    },
+    created() {
+      // localStorage에 저장된 데이터가 한 개라도 있는 경우
+      if (localStorage.length > 0) {
+          /*
+              localStorage에 저장된 모든 아이템을 한 번에 불러오는
+              API는 없기 때문에 반복문으로 아이템을 모두 불러와야 한다.
+          */
+          for (var i = 0; i < localStorage.length; i++) {
+              // push() : 배열의 끝 요소에 배열 아이템을 하나씩 추가하는 자바스크립트 내장 API
+              this.todoItems.push(localStorage.key(i));
+          }
+      }
+    },
+    methods: {
+      addTodo(todoItem) {
+        /*
+          로컬 스토리지에 데이터를 추가하는 로직
+           - todoItem : TodoInput 컴포넌트에서 올려 보낸 할 일 텍스트 값
+           - 이 값을 로컬 스토리지에 저장하고, App 컴포넌트의 todoItems 데이터 속성에도 추가
+           ( 뷰 데이터 )
+        */
+        localStorage.setItem(todoItem, todoItem);
+        this.todoItems.push(todoItem);
+      },
+      clearAll() {
+        localStorage.clear();
+        this.todoItems = [];
+      },
+      removeTodo(todoItem, index) {
+        // 로컬 스토리지의 데이터를 삭제
+        localStorage.removeItem(todoItem);
+        /*
+            splice() : 배열의 특정 인덱스를 삭제하는 API
+            할 일 삭제 처리
+        */
+        this.todoItems.splice(index, 1);
+      }
+    },
     components: {
       'Header': Header,
       'Menu': Menu,
-      'Input': Input
+      'Input': Input,
+      'List': List,
+      'Footer': Footer
     }
   }
 </script>
@@ -70,5 +110,9 @@
 
   .card-main {
     border: 1px solid #7A6462;
+  }
+
+  hr {
+      border: 1px solid #7A6462;
   }
 </style>
